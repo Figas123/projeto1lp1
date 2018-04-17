@@ -17,7 +17,7 @@ namespace TicTacToe
                 renderer.Render(board);
 
                 Position nextMove;
-                if (board.NextTurn == State.X)
+                if (board.NextTurn == State.p1)
                     nextMove = player1.GetPosition(board);
                 else
                     nextMove = player2.GetPosition(board);

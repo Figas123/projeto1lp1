@@ -7,8 +7,8 @@
 
         public Board()
         {
-            state = new State[3, 3];
-            NextTurn = State.X;
+            state = new State[7, 7];
+            NextTurn = State.p1;
         }
 
         public State GetState(Position position)
@@ -28,8 +28,8 @@
 
         private void SwitchNextTurn()
         {
-            if (NextTurn == State.X) NextTurn = State.O;
-            else NextTurn = State.X;
+            if (NextTurn == State.p1) NextTurn = State.p2;
+            else NextTurn = State.p1;
         }
     }
 

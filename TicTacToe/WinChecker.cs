@@ -4,8 +4,10 @@
     {
         public State Check(Board board)
         {
-            if (CheckForWin(board, State.X)) return State.X;
-            if (CheckForWin(board, State.O)) return State.O;
+            if (CheckForWin(board, State.p1Square)) return State.p1Square;
+            if (CheckForWin(board, State.p1Cylinder)) return State.p1Cylinder;
+            if (CheckForWin(board, State.p2Square)) return State.p2Square;
+            if (CheckForWin(board, State.p2Cylinder)) return State.p2Cylinder;
             return State.Undecided;
         }
 
@@ -32,7 +34,8 @@
                         new Position(5, column),
                         new Position(6, column) }, player))
                     return true;
-            for (int row = 0; row < 7; row++) {
+            for (int row = 0; row < 7; row++)
+            {
                 for (int column = 0; column < 7; column++)
                 {
                     if (AreAll(board, new Position[] {
