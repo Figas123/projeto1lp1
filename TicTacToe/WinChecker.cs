@@ -11,31 +11,44 @@
 
         private bool CheckForWin(Board board, State player)
         {
-            for (int row = 0; row < 3; row++)
+            for (int row = 0; row < 7; row++)
                 if (AreAll(board, new Position[] {
                         new Position(row, 0),
                         new Position(row, 1),
-                        new Position(row, 2) }, player))
+                        new Position(row, 2),
+                        new Position(row, 3),
+                        new Position(row, 4),
+                        new Position(row, 5),
+                        new Position(row, 6) }, player))
                     return true;
 
-            for (int column = 0; column < 3; column++)
+            for (int column = 0; column < 7; column++)
                 if (AreAll(board, new Position[] {
                         new Position(0, column),
                         new Position(1, column),
-                        new Position(2, column) }, player))
+                        new Position(2, column),
+                        new Position(3, column),
+                        new Position(4, column),
+                        new Position(5, column),
+                        new Position(6, column) }, player))
                     return true;
-
-            if (AreAll(board, new Position[] {
-                    new Position(0, 0),
-                    new Position(1, 1),
-                    new Position(2, 2) }, player))
-                return true;
-
-            if (AreAll(board, new Position[] {
-                    new Position(2, 0),
-                    new Position(1, 1),
-                    new Position(0, 2) }, player))
-                return true;
+            for (int row = 0; row < 7; row++) {
+                for (int column = 0; column < 7; column++)
+                {
+                    if (AreAll(board, new Position[] {
+                            new Position (row, column),
+                            new Position (row + 1, column + 1),
+                            new Position (row + 2, column + 2),
+                            new Position (row + 3, column + 3) }, player))
+                        return true;
+                    if (AreAll(board, new Position[] {
+                            new Position (row + 3, column),
+                            new Position (row + 2, column + 1),
+                            new Position (row + 1, column + 2),
+                            new Position (row, column + 3) }, player))
+                        return true;
+                }
+            }
 
             return false;
         }
@@ -52,8 +65,8 @@
 
         public bool IsDraw(Board board)
         {
-            for (int row = 0; row < 3; row++)
-                for (int column = 0; column < 3; column++)
+            for (int row = 0; row < 7; row++)
+                for (int column = 0; column < 7; column++)
                     if (board.GetState(new Position(row, column)) == State.Undecided) return false;
 
             return true;
