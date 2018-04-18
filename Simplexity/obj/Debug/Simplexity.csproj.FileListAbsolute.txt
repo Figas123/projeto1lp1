@@ -1,0 +1,7 @@
+C:\Users\Nuno\Desktop\LP1\Simplexity\bin\Debug\TicTacToe.exe.config
+C:\Users\Nuno\Desktop\LP1\Simplexity\bin\Debug\TicTacToe.exe
+C:\Users\Nuno\Desktop\LP1\Simplexity\bin\Debug\TicTacToe.pdb
+C:\Users\Nuno\Desktop\LP1\Simplexity\obj\Debug\Simplexity.csprojResolveAssemblyReference.cache
+C:\Users\Nuno\Desktop\LP1\Simplexity\obj\Debug\Simplexity.csproj.CoreCompileInputs.cache
+C:\Users\Nuno\Desktop\LP1\Simplexity\obj\Debug\TicTacToe.exe
+C:\Users\Nuno\Desktop\LP1\Simplexity\obj\Debug\TicTacToe.pdb

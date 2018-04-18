@@ -34,9 +34,9 @@
                         new Position(5, column),
                         new Position(6, column) }, player))
                     return true;
-            for (int row = 0; row < 7; row++)
+            for (int row = 0; row < 3; row++)
             {
-                for (int column = 0; column < 7; column++)
+                for (int column = 0; column < 3; column++)
                 {
                     if (AreAll(board, new Position[] {
                             new Position (row, column),
