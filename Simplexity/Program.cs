@@ -13,7 +13,7 @@ namespace Simplexity
             Player player2 = new Player();
             
             bool shapeChoosen, columnChoosen;
-            int square, cylinder;
+            int shape, column;
 
             while (!winChecker.IsDraw(board) && winChecker.Check(board) == State.Undecided)
             {
@@ -35,7 +35,7 @@ namespace Simplexity
                         if (choice.KeyChar == 'S' || choice.KeyChar == 's')
                         {
                             Console.WriteLine("\nYou choose Square.");
-                            square = 1;
+                            shape = 1;
                             shapeChoosen = true;
                             break;
                         }
@@ -43,7 +43,7 @@ namespace Simplexity
                         else if (choice.KeyChar == 'C' || choice.KeyChar == 'c')
                         {
                             Console.WriteLine("\nYou choose Cylinder.");
-                            cylinder = 1;
+                            shape = 2;
                             shapeChoosen = true;
                             break;
                         }
