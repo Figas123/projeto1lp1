@@ -11,17 +11,18 @@ namespace Simplexity
             Renderer renderer = new Renderer();
             Player player1 = new Player();
             Player player2 = new Player();
+            int shape = (int)Shape.empty;
             
             bool shapeChoosen, columnChoosen;
-            int shape, column;
+            int turn = 1;
 
             while (!winChecker.IsDraw(board) && winChecker.Check(board) == State.Undecided)
             {
-                renderer.Render(board);
+                renderer.Render(board, shape);
 
                 Position nextMove;
                 // PLAYER 1 <----------------------------------
-                if (board.NextTurn == State.p1)
+                if (turn % 2 != 0)
                 {
                     Console.WriteLine("Your turn, player 1");
 
@@ -29,21 +30,21 @@ namespace Simplexity
                     // CHOOSE SHAPE   <------
                     while (shapeChoosen != true)
                     {
-                        Console.WriteLine("What shape do you want to play? (S / C)");
+                        Console.WriteLine("What shape do you want to play? (Square = 1 / Cylinder = 2)");
                         ConsoleKeyInfo choice = Console.ReadKey();
                         // SQUARE
-                        if (choice.KeyChar == 'S' || choice.KeyChar == 's')
+                        if (choice.KeyChar == '1')
                         {
                             Console.WriteLine("\nYou choose Square.");
-                            shape = 1;
+                            shape = (int)Shape.square;
                             shapeChoosen = true;
                             break;
                         }
                         // CYLINDER
-                        else if (choice.KeyChar == 'C' || choice.KeyChar == 'c')
+                        else if (choice.KeyChar == '2')
                         {
                             Console.WriteLine("\nYou choose Cylinder.");
-                            shape = 2;
+                            shape = (int)Shape.cylinder;
                             shapeChoosen = true;
                             break;
                         }
@@ -69,31 +70,31 @@ namespace Simplexity
                             columnChoosen = false;
                         }
                     }
+                    turn++;
                 }
                 // PLAYER 2 <--------------------------------
                 else
                 {
                     Console.WriteLine("Your turn, player 2");
-
                     shapeChoosen = false;
                     // CHOOSE SHAPE   <------
                     while (shapeChoosen != true)
                     {
-                        Console.WriteLine("What shape do you want to play? (S / C)");
+                        Console.WriteLine("What shape do you want to play? (Square = 1 / Cylinder = 2)");
                         ConsoleKeyInfo choice = Console.ReadKey();
                         // SQUARE
-                        if (choice.KeyChar == 'S' || choice.KeyChar == 's')
+                        if (choice.KeyChar == '1')
                         {
                             Console.WriteLine("\nYou choose Square.");
-                            shape = 1;
+                            shape = (int)Shape.square;
                             shapeChoosen = true;
                             break;
                         }
                         // CYLINDER
-                        else if (choice.KeyChar == 'C' || choice.KeyChar == 'c')
+                        else if (choice.KeyChar == '2')
                         {
                             Console.WriteLine("\nYou choose Cylinder.");
-                            shape = 2;
+                            shape = (int)Shape.cylinder;
                             shapeChoosen = true;
                             break;
                         }
@@ -109,7 +110,7 @@ namespace Simplexity
                     {
                         Console.WriteLine("On which column do you want to place your shape? (1 - 7)");
 
-                        nextMove = player1.GetPosition(board);
+                        nextMove = player2.GetPosition(board);
 
                         columnChoosen = true;
 
@@ -119,10 +120,11 @@ namespace Simplexity
                             columnChoosen = false;
                         }
                     }
+                    turn++;
                 }
             }
 
-            renderer.Render(board);
+            renderer.Render(board, shape);
             renderer.RenderResults(winChecker.Check(board));
 
             Console.ReadKey();

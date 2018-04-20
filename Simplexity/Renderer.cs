@@ -4,12 +4,14 @@ namespace Simplexity
 {
     public class Renderer
     {
-        public void Render(Board board)
+        char result;
+
+        public void Render(Board board, int shape)
         {
             char[,] symbols = new char[7, 7];
             for (int row = 0; row < 7; row++)
                 for (int column = 0; column < 7; column++)
-                    symbols[row, column] = SymbolFor(board.GetState(new Position(row, column)));
+                    symbols[row, column] = SymbolFor(board.GetState(new Position(row, column)), shape);
 
             Console.WriteLine($" {symbols[0, 0]}   {symbols[0, 1]}   {symbols[0, 2]}   {symbols[0, 3]}   {symbols[0, 4]}   {symbols[0, 5]}   {symbols[0, 6]}");
             Console.WriteLine($" {symbols[1, 0]}   {symbols[1, 1]}   {symbols[1, 2]}   {symbols[1, 3]}   {symbols[1, 4]}   {symbols[1, 5]}   {symbols[1, 6]}");
@@ -22,26 +24,45 @@ namespace Simplexity
             Console.WriteLine("  -----------------------");
         }
 
-        private char SymbolFor(State state)
+        private char SymbolFor(State state, int shape)
         {
-            switch (state)
+            if ( state == State.Undecided )
             {
-                case State.p1Square: return 'S';
-                case State.p1Cylinder: return 'C';
-                case State.p2Square: return 's';
-                case State.p2Cylinder: return 'c';
-                default: return '|';
+                result = '|';
             }
+            if ( state == State.player1 )
+            {
+                if ( shape == (int)Shape.square )
+                {
+                    result = 'R';
+                }
+                else
+                {
+                    result = 'r';
+                }
+            }
+            if ( state == State.player2)
+            {
+                if ( shape == (int)Shape.square)
+                {
+                    result = 'W';
+                }
+                else
+                {
+                    result = 'w';
+                }
+            }
+            return result;
         }
 
         public void RenderResults(State winner)
         {
             switch (winner)
             {
-                case State.p1:
+                case State.player1:
                     Console.WriteLine("Player 1 Wins!");
                     break;
-                case State.p2:
+                case State.player2:
                     Console.WriteLine("Player 2 Wins!");
                     break;
                 case State.Undecided:

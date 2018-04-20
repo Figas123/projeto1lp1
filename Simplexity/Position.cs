@@ -11,5 +11,4 @@
             Column = column;
         }
     }
-
 }
