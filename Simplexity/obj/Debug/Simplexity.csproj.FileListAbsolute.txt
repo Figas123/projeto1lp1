@@ -5,3 +5,10 @@ C:\Users\Nuno\Desktop\LP1\Simplexity\obj\Debug\Simplexity.csprojResolveAssemblyR
 C:\Users\Nuno\Desktop\LP1\Simplexity\obj\Debug\Simplexity.csproj.CoreCompileInputs.cache
 C:\Users\Nuno\Desktop\LP1\Simplexity\obj\Debug\TicTacToe.exe
 C:\Users\Nuno\Desktop\LP1\Simplexity\obj\Debug\TicTacToe.pdb
+C:\Users\Tomás\source\repos\projeto1lp1\Simplexity\bin\Debug\TicTacToe.exe.config
+C:\Users\Tomás\source\repos\projeto1lp1\Simplexity\bin\Debug\TicTacToe.exe
+C:\Users\Tomás\source\repos\projeto1lp1\Simplexity\bin\Debug\TicTacToe.pdb
+C:\Users\Tomás\source\repos\projeto1lp1\Simplexity\obj\Debug\Simplexity.csprojResolveAssemblyReference.cache
+C:\Users\Tomás\source\repos\projeto1lp1\Simplexity\obj\Debug\Simplexity.csproj.CoreCompileInputs.cache
+C:\Users\Tomás\source\repos\projeto1lp1\Simplexity\obj\Debug\TicTacToe.exe
+C:\Users\Tomás\source\repos\projeto1lp1\Simplexity\obj\Debug\TicTacToe.pdb

@@ -6,7 +6,13 @@ namespace Simplexity
     {
         char result;
 
+        /// <summary>
+        /// Renders the game grid in the command prompt.
+        /// </summary>
+        /// <param name="board"></param>
+        /// <param name="shape"></param>
         public void Render(Board board, int shape)
+         
         {
             char[,] symbols = new char[7, 7];
             for (int row = 0; row < 7; row++)
@@ -23,7 +29,12 @@ namespace Simplexity
             
             Console.WriteLine("  -----------------------");
         }
-
+        /// <summary>
+        /// Chooses the symbols to place on the grid according to the user's inputs.
+        /// </summary>
+        /// <param name="state"></param>
+        /// <param name="shape"></param>
+        /// <returns></returns>
         private char SymbolFor(State state, int shape)
         {
             if ( state == State.Undecided )
@@ -54,7 +65,10 @@ namespace Simplexity
             }
             return result;
         }
-
+        /// <summary>
+        /// Settles the winner and displays it on the command prompt.
+        /// </summary>
+        /// <param name="winner"></param>
         public void RenderResults(State winner)
         {
             switch (winner)
