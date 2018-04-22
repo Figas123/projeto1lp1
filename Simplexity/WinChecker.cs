@@ -60,7 +60,13 @@
 
             return false;
         }
-
+        /// <summary>
+        /// Compares if the positions are equal.
+        /// </summary>
+        /// <param name="board"></param>
+        /// <param name="positions"></param>
+        /// <param name="state"></param>
+        /// <returns></returns>
         private bool AreAll(Board board, Position[] positions, State state)
         {
             foreach (Position position in positions)
@@ -68,7 +74,11 @@
 
             return true;
         }
-        
+        /// <summary>
+        /// Verifies if it´s a draw.
+        /// </summary>
+        /// <param name="board"></param>
+        /// <returns></returns>
         public bool IsDraw(Board board)
         {
             for (int row = 0; row < 7; row++)
