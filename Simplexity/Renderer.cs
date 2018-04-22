@@ -37,27 +37,34 @@ namespace Simplexity
         /// <returns></returns>
         private char SymbolFor(State state, int shape)
         {
-            if ( state == State.Undecided )
+            // If the grid space is emprty
+            if (state == State.Undecided )
             {
                 result = '|';
             }
-            if ( state == State.player1 )
+            // If the shape was placed by player 1
+            if (state == State.player1 )
             {
-                if ( shape == (int)Shape.square )
+                // If the shape is a square
+                if (shape == (int)Shape.square )
                 {
                     result = 'R';
                 }
+                // If the shape is a cylinder
                 else
                 {
                     result = 'r';
                 }
             }
-            if ( state == State.player2)
+            // If the shape was placed by player 2
+            if (state == State.player2)
             {
-                if ( shape == (int)Shape.square)
+                // If the shape is a square
+                if (shape == (int)Shape.square)
                 {
                     result = 'W';
                 }
+                // If the shape is a cylinder
                 else
                 {
                     result = 'w';
@@ -73,12 +80,15 @@ namespace Simplexity
         {
             switch (winner)
             {
+                // If the player 1 won
                 case State.player1:
                     Console.WriteLine("Player 1 Wins!");
                     break;
+                // If the player 2 won
                 case State.player2:
                     Console.WriteLine("Player 2 Wins!");
                     break;
+                // If it's a draw
                 case State.Undecided:
                     Console.WriteLine("Draw!");
                     break;

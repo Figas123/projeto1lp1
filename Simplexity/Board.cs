@@ -9,7 +9,9 @@
         /// </summary>
         public Board()
         {
+            // Size of the grid
             state = new State[7, 7];
+            // Starts the game with the player 1 being the first to play
             NextTurn = State.player1;
         }
         /// <summary>
@@ -41,6 +43,7 @@
         /// </summary>
         private void SwitchNextTurn()
         {
+            // Changes between turns
             if (NextTurn == State.player1) NextTurn = State.player2;
             else NextTurn = State.player1;
         }
